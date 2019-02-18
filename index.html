@@ -11,8 +11,7 @@
     <body>
         <section class="section">
             <div class="container" id="app">
-                <input class="input" type="text" placeholder="Text input" v-model="message">
-                <p>{{ message }}</p>
+                <h1 class="title">{{ message }}</h1>
             </div>
         </section>
 
@@ -21,7 +20,7 @@
              new Vue({
                 el: '#app',
                 data : {
-                    message: 'test'
+                    message: 'Hello Vue!'
                 }
              })
         </script>
