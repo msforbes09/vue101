@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Hello Vue!</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Vue!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
 
-    <body>
-        <section class="section">
-            <div class="container" id="app">
-                <h1 class="title" v-bind:title="title">{{ message }}</h1>
-                <button class="button" v-on:click="reverseMessage">Reverse Title</button>
+<body>
+    <section class="section">
+        <div class="container" id="app">
+            <h1 class="title" v-bind:title="title">{{ message }}</h1>
+            <button class="button" v-on:click="reverseMessage">Reverse Title</button>
 
-                <h2 class="subtitle" v-bind:title="title" v-if="shown">I am hidden!</h2>
-                <div class="content">
-                    <ul>
-                        <li v-for="todo in todos">{{todo.text}}</li>
-                    </ul>
-                </div>
-
-                <input class="input" type="text" placeholder="Text input" v-model="createTask">
-                <button class="button" v-on:click="addTask">Add Task</button>
+            <h2 class="subtitle" v-bind:title="title" v-if="shown">I am hidden!</h2>
+            <div class="content">
+                <ul>
+                    <task-list v-for="task in tasks" v-bind:task="task"></task-list>
+                </ul>
             </div>
-        </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script type="text/javascript">
-             new Vue({
-                el: '#app',
-                data : {
-                    message: 'Hello Vue!',
-                    title: 'Vue rendered title',
-                    shown: false,
-                    createTask: '',
-                    todos : [
-                        {text : 'First'},
-                        {text : 'Second'},
-                        {text : 'Third'},
-                        {text : 'Fourth'},
-                    ]
+            <input class="input" type="text" placeholder="Text input" v-model="newTask">
+            <button class="button" v-on:click="addTask">Add Task</button>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        Vue.component('task-list', {
+            props: ['task'],
+            template: '<li>{{ task.task }}</li>'
+        })
+
+        new Vue({
+            el: '#app',
+            data : {
+                message: 'Hello Vue!',
+                title: 'Vue rendered title',
+                shown: false,
+                newTask: '',
+                tasks : [
+                    {task : 'Learn HTML'},
+                    {task : 'Learn CSS'},
+                    {task : 'Learn Javascript'},
+                    {task : 'Learn PHP'},
+                ]
+            },
+            methods: {
+                addTask() {
+                    this.tasks.push({task: this.newTask});
+
+                    this.newTask = '';
                 },
-                methods: {
-                    addTask() {
-                        this.todos.push({text: this.createTask});
-
-                        this.createTask = '';
-                    },
-                    reverseMessage() {
-                        this.message = this.message.split('').reverse().join('');
-                    }
+                reverseMessage() {
+                    this.message = this.message.split('').reverse().join('');
                 }
-             })
-        </script>
-    </body>
+            }
+         })
+    </script>
+</body>
 </html>
