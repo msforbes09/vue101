@@ -12,14 +12,17 @@
         <section class="section">
             <div class="container" id="app">
                 <h1 class="title" v-bind:title="title">{{ message }}</h1>
+                <button class="button" v-on:click="reverseMessage">Reverse Title</button>
+
                 <h2 class="subtitle" v-bind:title="title" v-if="shown">I am hidden!</h2>
                 <div class="content">
                     <ul>
                         <li v-for="todo in todos">{{todo.text}}</li>
                     </ul>
                 </div>
+
                 <input class="input" type="text" placeholder="Text input" v-model="createTask">
-                <a class="button" v-on:click="addTask">Button</a>
+                <button class="button" v-on:click="addTask">Add Task</button>
             </div>
         </section>
 
@@ -42,8 +45,11 @@
                 methods: {
                     addTask() {
                         this.todos.push({text: this.createTask});
-                        
+
                         this.createTask = '';
+                    },
+                    reverseMessage() {
+                        this.message = this.message.split('').reverse().join('');
                     }
                 }
              })
