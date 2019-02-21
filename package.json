@@ -8,7 +8,7 @@
     "dev": "webpack --hide-modules --watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
