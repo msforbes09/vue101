@@ -7,17 +7,68 @@
 </head>
 
 <body>
-    <section class="section">
-        <div class="container">
-            <h1 class="title">
-                Hello World
-            </h1><!-- title -->
+    <div id="app">
+        <section class="section">
+            <div class="container">
+                <h1 class="title">
+                    Welcome to Vue101
+                </h1><!-- title -->
 
-            <p class="subtitle">
-                My first website with <strong>Webpack</strong>!
-            </p><!-- subtitle -->
-        </div><!-- container -->
-    </section><!-- section -->
+                <p class="subtitle">
+                    My journey with <strong>Vue.js</strong> together with <strong>Bulma</strong> and <strong>Webpack</strong>!
+                </p><!-- subtitle -->
+
+            </div><!-- container -->
+        </section><!-- section -->
+        
+        <section class="section">
+            <div class="container">
+                <div class="field">
+                    <label class="label" for="">Example of two way binding.</label>
+                
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" v-model="message"  placeholder="Text input">
+
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span><!-- icon -->
+                        
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span><!-- icon -->
+                    </div><!-- control -->
+                </div><!-- field -->
+
+                <p class="subtitle">Input content: {{ message }}</p>
+            </div><!-- container -->
+        </section><!-- section -->
+
+        <section class="section">
+            <div class="container">
+                <ul class="content">
+                    <li v-for="task in tasks" v-text="task"></li>
+                </ul>
+
+                <div class="field">
+                    <label class="label">Add new task:</label>
+                
+                    <div class="control">
+                        <div class="columns">
+                            <div class="column">
+                                <input class="input" type="text" v-model="newTask" placeholder="new task here">
+                            </div><!-- column -->
+                        
+                            <div class="column">
+                                <button class="button is-primary is-outlined" @click="addTask">Save</button>
+                            </div><!-- column -->
+                        </div><!-- columns -->
+                    </div><!-- control -->
+
+                </div><!-- field -->
+            </div><!-- container -->
+        </section><!-- section -->
+    </div>
+
     <script src="./bundle.js"></script>
 </body>
 </html>
