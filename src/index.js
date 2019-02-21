@@ -1,4 +1,6 @@
-import _ from 'lodash'
+import _ from 'lodash';
+import 'bulma/css/bulma.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function component() {
   let element = document.createElement('div');
@@ -9,4 +11,4 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+// document.body.appendChild(component());
