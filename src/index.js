@@ -11,6 +11,7 @@ new Vue({
         message: 'Try to change this value',
         tasks: ['Learn HTML5', 'Learn Css3', 'Learn Javascript',],
         newTask: '',
+        title: 'Im a generated title using vue'
     },
     methods: {
         addTask() {
