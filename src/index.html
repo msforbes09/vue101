@@ -42,6 +42,31 @@
                 <p class="subtitle">Input content: {{ message }}</p>
             </div><!-- container -->
         </section><!-- section -->
+
+        <section class="section">
+            <div class="container">
+                <ul class="content">
+                    <li v-for="task in tasks" v-text="task"></li>
+                </ul>
+
+                <div class="field">
+                    <label class="label">Add new task:</label>
+                
+                    <div class="control">
+                        <div class="columns">
+                            <div class="column">
+                                <input class="input" type="text" v-model="newTask" placeholder="new task here">
+                            </div><!-- column -->
+                        
+                            <div class="column">
+                                <button class="button is-primary is-outlined" @click="addTask">Save</button>
+                            </div><!-- column -->
+                        </div><!-- columns -->
+                    </div><!-- control -->
+
+                </div><!-- field -->
+            </div><!-- container -->
+        </section><!-- section -->
     </div>
 
     <script src="./bundle.js"></script>
