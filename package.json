@@ -1,0 +1,22 @@
+{
+  "name": "vue101",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msforbes09/vue101.git"
+  },
+  "author": "Arnel Forbes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msforbes09/vue101/issues"
+  },
+  "homepage": "https://github.com/msforbes09/vue101#readme",
+  "devDependencies": {
+    "webpack": "^4.29.5"
+  }
+}
