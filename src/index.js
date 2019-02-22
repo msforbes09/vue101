@@ -1,22 +1,9 @@
-import 'bulma/css/bulma.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import './index.html';
-import vue from 'vue';
+import './bootstrap';
+import router from './routes';
+import App from './App.vue';
 
-window.Vue = vue;
 
 new Vue({
-    el: '#app',
-    data: {
-        message: 'Try to change this value',
-        tasks: ['Learn HTML5', 'Learn Css3', 'Learn Javascript',],
-        newTask: '',
-        title: 'Im a generated title using vue'
-    },
-    methods: {
-        addTask() {
-            this.tasks.push(this.newTask);
-            this.newTask = '';
-        }
-    }
-});
+    router,
+    render: h => h(App),
+}).$mount('#app')
