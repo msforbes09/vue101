@@ -1,11 +1,8 @@
 <template>
     <div>
-    <Navbar></Navbar>
+        <Navbar></Navbar>
         
-        
-        <div class="container">
-            <router-view></router-view>
-        </div><!-- container -->
+        <router-view></router-view>
     </div>
 </template>
 
@@ -19,7 +16,3 @@ export default{
     }    
 }
 </script>
-
-<style>
-    
-</style>

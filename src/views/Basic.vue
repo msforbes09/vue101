@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <section class="section">
             <div class="field">
                 <label class="label" for="">Example of two way binding.</label>

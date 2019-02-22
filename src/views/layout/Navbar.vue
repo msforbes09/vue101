@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar is-fixed-top is-light" id="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top is-primary is-tab" id="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="https://bulma.io">
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
@@ -14,7 +14,7 @@
 
         <div id="navbarContent" class="navbar-menu" :class="{ 'is-active': active }">
             <div class="navbar-end">
-                <router-link class="navbar-item is-active" to="/" exact>Home</router-link>
+                <router-link class="navbar-item" to="/" exact>Home</router-link>
 
                 <router-link class="navbar-item" to="/basic">Basic</router-link>
             </div><!-- navbar-start -->
